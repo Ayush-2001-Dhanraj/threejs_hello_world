@@ -6,7 +6,7 @@ const scene = new THREE.Scene();
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 const cubeMaterial = new THREE.MeshBasicMaterial({
   color: "red",
-  // wireframe: true,
+  wireframe: true,
 });
 
 // stairs 1
@@ -161,6 +161,11 @@ const renderLoop = () => {
   previousTime = currentTime;
 
   group.rotation.y += THREE.MathUtils.degToRad(1) * delta * 20;
+
+  stairs1.scale.x = Math.abs(Math.sin(currentTime)) + 0.2;
+  stairs2.scale.z = Math.abs(Math.sin(currentTime)) + 0.2;
+  stairs3.scale.x = Math.abs(Math.sin(currentTime)) + 0.2;
+  stairs4.scale.z = Math.abs(Math.sin(currentTime)) + 0.2;
 
   controls.update();
   renderer.render(scene, camera);
