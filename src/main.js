@@ -7,8 +7,13 @@ const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red" });
 
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
-
+cubeMesh.position.y = 1;
+cubeMesh.position.z = 2;
 scene.add(cubeMesh);
+
+const axesHelper = new THREE.AxesHelper(5);
+
+scene.add(axesHelper);
 
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -17,9 +22,9 @@ const camera = new THREE.PerspectiveCamera(
   30
 );
 
-console.log(window.devicePixelRatio);
+// console.log(window.devicePixelRatio);
 
-const aspectRatio = window.innerWidth / window.innerHeight;
+// const aspectRatio = window.innerWidth / window.innerHeight;
 
 // const camera = new THREE.OrthographicCamera(
 //   -1 * aspectRatio,
